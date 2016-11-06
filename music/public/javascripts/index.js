@@ -53,10 +53,11 @@ function getDots() {
     for (var i = 0; i < size; i++) {
         var x = random(0, width);
         var y = random(0, height);
-        var color = "rgb(" + random(0, 255) + "," + random(0, 255) + "," + random(0, 255) + ")";
+        var color = "rgba(" + random(0, 255) + "," + random(0, 255) + "," + random(0, 255) + ",0.2)";
         Dots.push({
             x: x,
             y: y,
+            dx:random(1,4),
             color: color
         });
     }
@@ -86,13 +87,13 @@ function draw(arr) {
     var w = width / size;
     ctx.fillStyle = line;
     for (var i = 0; i < size; i++) {
+            var o = Dots[i];
         if (draw.type == 'column') {
             var h = arr[i] / 256 * height;
             ctx.fillRect(w * i, height - h, w * 0.6, h); //柱状图
         } else if (draw.type == 'dot') {
             ctx.beginPath();    //声明重新绘制
-            var o = Dots[i];
-            var r = arr[i] / 256 * 50;
+            var r = 10 + arr[i] / 256 * (height>width ? width : height) / 10;
             ctx.arc(o.x, o.y, r, 0, Math.PI * 2, true);
             //ctx.strokeStyle = "#fff";
             //ctx.stroke();
@@ -102,6 +103,8 @@ function draw(arr) {
             g.addColorStop(1, o.color);
             ctx.fillStyle = g;
             ctx.fill();
+            o.x += o.dx;
+            o.x = o.x > width ? 0 : o.x;
         }
     }
 }
