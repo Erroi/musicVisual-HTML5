@@ -1,3 +1,21 @@
+启动步骤
+Node + Express + ejs
+webAudio + canvas
+搭建过程：
+1 npm install -g express-generator
+2 express -e music   //构建项目，用ejs模版引擎
+3 npm install 
+4 npm install -g supervisor  //全局安装 supervisor 实时监听修改动态
+5 supervisor bin/www    //实时监测此项目
+6 访问本地 3000端口
+
+
+目录解析：
+/routes/index.js   控制路由
+/public/＊ 静态资源
+
+
+
 AudioContext audio上下文对象
  一般，一个document只有一个AudioContext；
  创建：var ac = new window.AudioContext();
