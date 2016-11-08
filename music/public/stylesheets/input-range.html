@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>range-input</title>
+	<style type="text/css">
+		input[type=range]{
+			-webkit-appearance:none;
+			-moz-appearance:none;
+			width:90%;
+		}
+		input[type=range]::-webkit-slider-thumb{    /*滑块 chrome*/
+			-webkit-appearance: none;
+			border:1px solid #000;
+			height:36px;
+			width:16px;
+			border-radius:3px;
+			background:#fff;
+			cursor:pointer;
+			margin-top:-8px;
+			box-shadow:1px 1px 1px #000,0px 0px 1px #0d0d0d;
+		}
+		input[type=range]::-moz-range-thumb{      /*滑块 火狐*/
+			box-shadow: 1px 1px 1px #000,0px 0px 1px #0d0d0d;
+			border:1px solid #000;
+			height:38px;
+			width:16px;
+			border-radius:3px;
+			background:#fff;
+			cursor:pointer;
+		}
+		input[type=range]::-ms-thumb{       /*滑块 IE*/
+			box-shadow:1px 1px 1px #000,0px 0px 1px #0d0d0d;
+			border:1px solid #000;
+			height:36px;
+			width:16px;
+			border-radius:3px;
+			background:#fff;
+			cursor:pointer;
+		}
+		input[type=range]::-webkit-slider-runnable-track{     /*轨道*/
+			width:100%;
+			height:8.4px;
+			cursor:pointer;
+			box-shadow:1px 1px 1px #000,0px 0px 1px #0d0d0d;
+			background:#3071a9;
+			border-radius:1.3px;
+			border:0.2px solid #010101;
+		}
+		input[type=range]:focus::-webkit-slider-runnable-track{
+			background-color: #367ebd;
+		}
+		input[type=range]::-moz-range-track{       /*火狐*/
+			width:100%;
+			height:8.4px;
+			cursor:pointer;
+			box-shadow:1px 1px 1px #000,0px 0px 1px #0d0d0d;
+			background:#3071a9;
+			border-radius:1.3px;
+			border:0.2px solid #010101;
+		}
+		input[type=range]::-ms-track{         /*IE*/
+			width:100%;
+			height:8.4px;
+			cursor:pointer;
+			background:transparent;
+			border-color:transparent;
+			border-width: 16px 0;
+			color:transparent;
+		}
+		input[type=range]::-ms-fill-lower{
+			background:#2a6495;
+			border:0.2px solid #010101;
+			border-radius:2.6px;
+			box-shadow: 1px 1px 1px #000,0px 0px 1px #0d0d0d;
+		}
+		input[type=range]:focus::-ms-fill-upper{
+			background:#367ebd;
+		}
+
+	</style>
+</head>
+<body>
+	<input type="range" name="myRange"/>
+</body>
+</html>
