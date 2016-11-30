@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title><%= title %></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">  
     <link rel='stylesheet' href='public/stylesheets/index.css' />
   </head>
   <body>
   	<header>
-  		<h1></h1>
+  		<h1><%= title %></h1>
   		<ul class="type" id="type">
   			<li data-type="dot">Dot</li>
   			<li data-type="column" class="selected">Column</li>
@@ -20,7 +20,7 @@
     <div class="left">
     	<ul id="list">
     		<% music.forEach(function(name){ %>
-				<li title="<%= name %>"> <%- name %></li>
+				<li title="<%= name %>"> <%= name %></li>
     		<% }) %>
     	</ul>
     </div>
